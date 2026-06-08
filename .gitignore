@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pyo
+命中地址/
+.vscode/
+.idea/

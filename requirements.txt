@@ -1,0 +1,8 @@
+numpy>=1.26,<3.0
+cupy-cuda12x>=14.0,<16.0
+nvidia-cuda-runtime-cu12
+nvidia-cuda-nvrtc-cu12
+nvidia-cuda-cccl-cu12
+coincurve>=19.0,<22.0
+pycryptodome>=3.18.0,<4.0
+base58>=2.1.0,<3.0
