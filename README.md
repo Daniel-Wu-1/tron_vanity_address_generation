@@ -43,6 +43,8 @@ https://github.com/Daniel-Wu-1/tron_vanity/releases/download/TRON%2FTRX%2FUSDT%E
 ---
 
 ## 实测性能
+![图片描述](Snipaste_2026-06-08_15-32-10.png)
+![图片描述](Snipaste_2026-06-08_15-32-37.png)
 
 ### RTX 3060 (28 SM, 12GB 显存)
 
