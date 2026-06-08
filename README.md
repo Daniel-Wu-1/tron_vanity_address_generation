@@ -73,7 +73,7 @@
 ## 目录结构
 
 ```
-test/                            ← 项目根目录
+tron_vanity_address_generation-main/                            ← 项目根目录
 ├── tron_vanity_gpu.py           主程序 (CLI + GPU 调度 + 多进程协调)
 ├── kernels.cu                   全部 CUDA 内核 (C/C++ 源码, NVRTC 运行时编译)
 ├── cpu_worker.py                CPU 工作进程入口 (多进程 spawn 出来跑)
