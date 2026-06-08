@@ -1,6 +1,6 @@
 # TRON 靓号地址生成器 (CUDA + CPU 全速版)
 
-完全手写的 CUDA 内核 + CPU 多进程并行, 在单张消费级 GPU 上每秒生成 **数千万到上亿** TRON 地址并实时模式匹配. 默认占满算力运行
+利用 CUDA 内核 + CPU 多进程并行, 在单张消费级 GPU 上每秒生成 **数千万到上亿** TRON 地址并实时模式匹配. 默认占满算力运行, 实测性能应该是目前效率最高的了
 
 不懂如何配置环境的可以直接下载发行版直接使用：**点击[[TRON.rar]](https://github.com/Daniel-Wu-1/tron_vanity/releases/download/TRON%2FTRX%2FUSDT%E9%9D%93%E5%8F%B7%E7%94%9F%E6%88%90V1.0/TRON.rar)下载**
 
