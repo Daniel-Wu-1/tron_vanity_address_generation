@@ -4,7 +4,7 @@
 
 如想于分发请自行下载代码审计/修改后打包 ，所需依赖已列出 ，详见下文
 
-小白用户不懂如何配置环境的可以直接下载发行版直接使用：**点击[[TRON.rar]](https://github.com/Daniel-Wu-1/tron_vanity/releases/download/TRON%2FTRX%2FUSDT%E9%9D%93%E5%8F%B7%E7%94%9F%E6%88%90V1.0/TRON.rar)下载** 此版本内置了所有所需依赖可直接使用
+小白用户不懂如何配置环境的可以直接下载发行版直接使用：**点击[[TRON.rar]](https://github.com/Daniel-Wu-1/tron_vanity/releases/download/TRON%2FTRX%2FUSDT%E9%9D%93%E5%8F%B7%E7%94%9F%E6%88%90V1.0/TRON.rar)下载** ，此版本内置了所有所需依赖可直接使用
 
 ---
 
