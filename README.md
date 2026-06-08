@@ -764,3 +764,4 @@ Windows 任务管理器默认看的是 "3D" 引擎, CUDA 走 "Compute_0". 切换
 ## License
 
 仅供个人学习研究使用. 不提供任何保证, 使用风险自负.
+技术交流：TG https://t.me/jiutong9999
