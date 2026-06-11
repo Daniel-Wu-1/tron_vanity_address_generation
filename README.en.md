@@ -101,26 +101,26 @@ The whole system is **"main process + GPU kernel + N CPU worker processes + 1 st
 │ Main process (tron_vanity_gpu.py)                                  │
 │                                                                    │
 │  ┌────────────────────────────────────────┐                        │
-│  │ Main loop (dual stream ping-pong)      │                        │
+│  │ Main loop (dual stream ping-pong)       │                        │
 │  │  ─── stream A: sync → collect hits → relaunch                   │
 │  │  ─── stream B: kernel runs on GPU at the same time              │
 │  └────────────────────────────────────────┘                        │
-│         │ launch kernel              │ pull CPU hits               │
+│         │ launch kernel              │ pull CPU hits                │
 │         ▼                            ▼                             │
 │  ┌──────────────────┐         ┌──────────────────────┐             │
 │  │ GPU (RTX 30/40)  │         │ multiprocessing Queue│             │
 │  │ ─── vanity_kernel│         └──────────────────────┘             │
-│  │  17.6M chains in parallel                       ▲               │
-│  │  16 points per chain                            │               │
-│  │  Montgomery inverse        ┌──────────────────┐ │               │
+│  │   17.6M chains in parallel                       ▲               │
+│  │   16 points per chain │                           │              │
+│  │   Montgomery inverse  │     ┌──────────────────┐ │               │
 │  └──────────────────┘         │ CPU worker × N   │─┘               │
 │         ▲                     │ (coincurve)      │                 │
 │         │                     └──────────────────┘                 │
 │         │ status parameters                                        │
 │  ┌──────────────────────────────────────────────┐                  │
-│  │ Status-line refresh thread (daemon)          │                  │
-│  │ Reads global variables every 0.5s and prints │                  │
-│  │ a \r single-line refresh                     │                  │
+│  │ Status-line refresh thread (daemon)           │                  │
+│  │ Reads global variables every 0.5s and prints  │                  │
+│  │ a \r single-line refresh                      │                  │
 │  └──────────────────────────────────────────────┘                  │
 └────────────────────────────────────────────────────────────────────┘
 ```
@@ -247,6 +247,12 @@ Amortized cost per point:
 - M=16: 19 mul/point (-93%)
 
 **Why not make M infinitely large?** Register pressure is ~ O(M×8). On RTX 3060, M=32 spills into LMEM and becomes slower instead. When the program starts, it warmup-tests M=8 / M=16 and automatically selects the fastest.
+
+<p>
+  <a href="./docs/m-parameter-optimization.en.md">
+    <img alt="M Parameter and High-End GPU Tuning Details" src="https://img.shields.io/badge/Details-M%20Parameter%20%26%20High--End%20GPU%20Tuning-0969da?style=for-the-badge">
+  </a>
+</p>
 
 ### Base58 Tail Early Exit
 

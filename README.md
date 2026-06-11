@@ -247,6 +247,12 @@ Python 依赖列表, 加了版本上限避免上游 breaking change 突然挂掉
 
 **为什么 M 不无限大?** 寄存器压力 ~ O(M×8). M=32 在 RTX 3060 上会溢出 LMEM 反而变慢. 程序启动时 warmup 测试 M=8 / M=16, 自动选最快.
 
+<p>
+  <a href="./docs/m-parameter-optimization.md">
+    <img alt="M 参数与高端 GPU 调优详细说明" src="https://img.shields.io/badge/%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E-M%20%E5%8F%82%E6%95%B0%E4%B8%8E%E9%AB%98%E7%AB%AF%20GPU%20%E8%B0%83%E4%BC%98-0969da?style=for-the-badge">
+  </a>
+</p>
+
 ### Base58 尾部早退
 
 base58 长除法**从低位产出末尾字符** — 每次 `N = N / 58` 给出末尾一个字符. 想知道地址末 K 个字符, 只需跑 K 次长除法, 不必跑完整 34 次.
