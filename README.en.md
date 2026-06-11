@@ -101,26 +101,26 @@ The whole system is **"main process + GPU kernel + N CPU worker processes + 1 st
 │ Main process (tron_vanity_gpu.py)                                  │
 │                                                                    │
 │  ┌────────────────────────────────────────┐                        │
-│  │ Main loop (dual stream ping-pong)       │                        │
+│  │ Main loop (dual stream ping-pong)      │                        │
 │  │  ─── stream A: sync → collect hits → relaunch                   │
 │  │  ─── stream B: kernel runs on GPU at the same time              │
 │  └────────────────────────────────────────┘                        │
-│         │ launch kernel              │ pull CPU hits                │
+│         │ launch kernel              │ pull CPU hits               │
 │         ▼                            ▼                             │
 │  ┌──────────────────┐         ┌──────────────────────┐             │
 │  │ GPU (RTX 30/40)  │         │ multiprocessing Queue│             │
 │  │ ─── vanity_kernel│         └──────────────────────┘             │
-│  │   17.6M chains in parallel                       ▲               │
-│  │   16 points per chain │                           │              │
-│  │   Montgomery inverse  │     ┌──────────────────┐ │               │
+│  │  17.6M chains in parallel                       ▲               │
+│  │  16 points per chain                            │               │
+│  │  Montgomery inverse        ┌──────────────────┐ │               │
 │  └──────────────────┘         │ CPU worker × N   │─┘               │
 │         ▲                     │ (coincurve)      │                 │
 │         │                     └──────────────────┘                 │
 │         │ status parameters                                        │
 │  ┌──────────────────────────────────────────────┐                  │
-│  │ Status-line refresh thread (daemon)           │                  │
-│  │ Reads global variables every 0.5s and prints  │                  │
-│  │ a \r single-line refresh                      │                  │
+│  │ Status-line refresh thread (daemon)          │                  │
+│  │ Reads global variables every 0.5s and prints │                  │
+│  │ a \r single-line refresh                     │                  │
 │  └──────────────────────────────────────────────┘                  │
 └────────────────────────────────────────────────────────────────────┘
 ```
