@@ -1,5 +1,6 @@
 <p align="right">
-  <a href="./README.md">中文</a> | <strong>English</strong>
+  <a href="./README.md"><img alt="中文" src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-%E5%88%87%E6%8D%A2-6e7781?style=flat-square"></a>
+  <img alt="English Current" src="https://img.shields.io/badge/English-Current-0969da?style=flat-square">
 </p>
 
 # TRON Vanity Address Generator (CUDA + CPU Full-Speed Version)
@@ -100,26 +101,26 @@ The whole system is **"main process + GPU kernel + N CPU worker processes + 1 st
 │ Main process (tron_vanity_gpu.py)                                  │
 │                                                                    │
 │  ┌────────────────────────────────────────┐                        │
-│  │ Main loop (dual stream ping-pong)      │                        │
+│  │ Main loop (dual stream ping-pong)       │                        │
 │  │  ─── stream A: sync → collect hits → relaunch                   │
 │  │  ─── stream B: kernel runs on GPU at the same time              │
 │  └────────────────────────────────────────┘                        │
-│         │ launch kernel              │ pull CPU hits               │
+│         │ launch kernel              │ pull CPU hits                │
 │         ▼                            ▼                             │
 │  ┌──────────────────┐         ┌──────────────────────┐             │
 │  │ GPU (RTX 30/40)  │         │ multiprocessing Queue│             │
 │  │ ─── vanity_kernel│         └──────────────────────┘             │
-│  │ 17.6M chains in parallel                        ▲               │
-│  │ 16 points per chain                             │               │
-│  │ Montgomery inverse         ┌──────────────────┐ │               │
+│  │   17.6M chains in parallel                       ▲               │
+│  │   16 points per chain │                           │              │
+│  │   Montgomery inverse  │     ┌──────────────────┐ │               │
 │  └──────────────────┘         │ CPU worker × N   │─┘               │
 │         ▲                     │ (coincurve)      │                 │
 │         │                     └──────────────────┘                 │
 │         │ status parameters                                        │
 │  ┌──────────────────────────────────────────────┐                  │
-│  │ Status-line refresh thread (daemon)          │                  │
-│  │ Reads global variables every 0.5s and prints │                  │
-│  │ a \r single-line refresh                     │                  │
+│  │ Status-line refresh thread (daemon)           │                  │
+│  │ Reads global variables every 0.5s and prints  │                  │
+│  │ a \r single-line refresh                      │                  │
 │  └──────────────────────────────────────────────┘                  │
 └────────────────────────────────────────────────────────────────────┘
 ```
