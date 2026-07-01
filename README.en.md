@@ -5,7 +5,7 @@
 
 # TRON Vanity Address Generator (CUDA + CPU Full-Speed Version)
 
-In real tests, the current efficiency is the highest (RTX3060 one hundred million attempts/second, 6A-style addresses come out in seconds). Comparisons are welcome. The code structure is listed. It is completely free, purely open source, and not encrypted (including the CUDA computing unit; unlike some people's released software that also carries encrypted backend files, I will not name names here). The software code and operating principles are public, so you can audit/Fork/modify it yourself, and you can also apply to the author for authorization, if you have time ^^
+In real tests, the current efficiency is the highest (RTX3060 one hundred million attempts/second, 6A-style addresses come out in seconds). Comparisons are welcome. The code structure is listed. It is completely free, purely open source, and not encrypted (including the CUDA computing unit; unlike some people's released software that also carries encrypted backend files, I will not name names here). The software code and operating principles are public, so you can audit/Fork/modify it yourself, and if you got time you can also apply to the author for authorization  ^^
 
 If you want to distribute it, please download the code yourself, audit/modify it, and then package it. The required dependencies are listed below.
 
