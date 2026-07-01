@@ -1,4 +1,4 @@
-<p align="right">
+<p align="left">
   <img alt="中文 当前" src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-%E5%BD%93%E5%89%8D-0969da?style=flat-square">
   <a href="./README.en.md"><img alt="English" src="https://img.shields.io/badge/English-Switch-6e7781?style=flat-square"></a>
 </p>
